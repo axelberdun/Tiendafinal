@@ -1,0 +1,25 @@
+{
+   "products": [
+      {
+         "id": 1,
+         "title": "Nvidia GeForce RTX 4060 8GB",
+         "description": "Perfecta para jugar a todo en 1080p con trazado de rayos (Ray Tracing) y DLSS 3 habilitado de forma fluida.",
+         "price": 450000,
+         "images": ["https://images.unsplash.com/photo-1607604276583-eef5d076aa5f?auto=format&fit=crop&w=400&q=80"]
+      },
+      {
+         "id": 2,
+         "title": "Nvidia GeForce RTX 4070 Super 12GB",
+         "description": "Rendimiento descomunal para resoluciones 1440p (2K) competitivas y máxima tasa de refresco en ultra.",
+         "price": 720000,
+         "images": ["https://images.unsplash.com/photo-1587202372775-e229f172b9d7?auto=format&fit=crop&w=400&q=80"]
+      },
+      {
+         "id": 3,
+         "title": "AMD Radeon RX 7600 XT 16GB",
+         "description": "Memoria VRAM masiva para texturas en ultra y excelente desempeño estable en juegos de mundo abierto de última generación.",
+         "price": 490000,
+         "images": ["https://images.unsplash.com/photo-1542751371-adc38448a05e?auto=format&fit=crop&w=400&q=80"]
+      }
+   ]
+}

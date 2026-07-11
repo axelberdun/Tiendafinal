@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Login | GPU BerdunStore</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../styles.css">
+    <style>
+        .login-layout { display: flex; justify-content: center; align-items: center; min-height: 75vh; }
+        .login-box { background: white; padding: 2rem; border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); width: 100%; max-width: 360px; }
+        .login-box h2 { text-align: center; margin-bottom: 1.5rem; color: #2c3e50; }
+        .btn-send { background-color: #3498db; color: white; padding: 0.7rem; width: 100%; border: none; border-radius: 4px; font-weight: bold; cursor: pointer; margin-top: 1rem; }
+        .btn-send:hover { background-color: #2980b9; }
+        .bottom-link { text-align: center; margin-top: 1rem; font-size: 0.85rem; }
+        .bottom-link a { color: #3498db; text-decoration: none; }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">GPU BerdunStore</div>
+        <nav><ul><li><a href="../index.html">Volver al Inicio</a></li></ul></nav>
+    </header>
+    <main class="login-layout">
+        <div class="login-box">
+            <h2>Iniciar Sesión</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label>Usuario o Email:</label>
+                    <input type="text" id="username" required>
+                </div>
+                <div class="form-group">
+                    <label>Contraseña:</label>
+                    <input type="password" id="password" required>
+                </div>
+                <button type="submit" class="btn-send">Ingresar</button>
+            </form>
+            <p class="bottom-link">¿No tenés cuenta? <a href="./register.html">Registrate acá</a></p>
+        </div>
+    </main>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', (e) => {
+           e.preventDefault();
+           const user = document.getElementById('username').value.trim();
+           const password = document.getElementById('password').value.trim();
+           const users = JSON.parse(localStorage.getItem('user')) || [];
+           const validUser = users.find(u => (u.user === user || u.email === user) && u.password === password);
+           if (validUser) {
+              alert('Bienvenido ' + validUser.user);
+              localStorage.setItem('isLogin', JSON.stringify(true));
+              window.location.href = './carrito.html';
+           } else { alert('Usuario o contraseña incorrectos'); }
+        });
+    </script>
+</body>
+</html>

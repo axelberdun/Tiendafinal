@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pre-Entrega: GPU BerdunStore</title>
+    
+    <!-- Google Fonts original tuyo -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Favicon con código SVG para no usar archivos pesados en la carpeta -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎮</text></svg>">
+
+    <!-- REQUISITO DEL PROFE: Enlace en cascada a los estilos divididos -->
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/footer.css">
+    
+    <!-- Tu archivo CSS premium original -->
+    <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+
+    <header>
+        <div class="logo">GPU BerdunStore</div>
+        <nav>
+            <ul>
+                <li><a href="#inicio">Inicio</a></li>
+                <li><a href="#productos">Productos</a></li>
+                <li><a href="#resenas">Reseñas</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+                <!-- Pestañas del backend agregadas sin romper el diseño -->
+                <li><a href="./pages/login.html">Login</a></li>
+                <li><a href="./pages/register.html">Registro</a></li>
+                <li>
+                    <a href="./pages/carrito.html" style="display: flex; align-items: center; gap: 5px;">
+                        🛒 (<span class="count">0</span>)
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+
+        <section id="inicio" class="hero-section">
+            <h1>Potenciá tu Setup con las Mejores Placas</h1>
+            <p>Encontrá el rendimiento definitivo para gaming, streaming y renderizado profesional.</p>
+            <div class="multimedia-container">
+                <img src="https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=1200&q=80" alt="Placa de video de alta gama iluminada con RGB dentro de un gabinete">
+            </div>
+        </section>
+
+        <section id="productos" class="productos-section">
+            <h2>Placas de Video Destacadas</h2>
+            <!-- Acá adentro se inyectan las placas desde el JSON local -->
+            <div id="productCard" class="productos-container"></div>
+            <div style="text-align: center; margin-top: 2rem;">
+                <button id="mostrarProducts" style="background-color: #2c3e50; color: white; padding: 0.75rem 1.5rem; border: none; border-radius: 4px; cursor: pointer; font-weight: bold;">Mostrar más productos</button>
+            </div>
+        </section>
+
+        <section id="resenas" class="resenas-section">
+            <h2>Lo que dicen nuestros clientes</h2>
+            <div class="resenas-grid">
+                <div class="resena-card">
+                    <p>"Excelente servicio y atención. Compré la RTX 4070 y el envío llegó al día siguiente impecable."</p>
+                    <h4>- Carlos G.</h4>
+                </div>
+                <div class="resena-card">
+                    <p>"Muy buena relación precio-calidad. El asesoramiento técnico pre-venta me ayudó a elegir la fuente ideal."</p>
+                    <h4>- Ana M.</h4>
+                </div>
+                <div class="resena-card">
+                    <p>"Una masa la placa de video, todo original, cerrado en caja sellada de fábrica. Súper recomendados."</p>
+                    <h4>- Lucas R.</h4>
+                </div>
+            </div>
+        </section>
+
+        <section id="contacto" class="contacto-section">
+            <h2>Contacto</h2>
+            <p>Dejanos tu consulta sobre stock o compatibilidad y te responderemos a la brevedad.</p>
+            
+            <!-- Tu Formspree original funcionando real -->
+            <form action="https://formspree.io/f/xwvzaqyl" method="POST" class="contacto-form">
+                <div class="form-group">
+                    <label for="nombre">Nombre Completo:</label>
+                    <input type="text" id="nombre" name="name" required placeholder="Ej: Juan Pérez">
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Correo Electrónico:</label>
+                    <input type="email" id="email" name="email" required placeholder="Ej: juan@email.com">
+                </div>
+
+                <div class="form-group">
+                    <label for="mensaje">Mensaje o Consulta:</label>
+                    <textarea id="mensaje" name="message" rows="5" required placeholder="Escribí detalladamente tu consulta acá..."></textarea>
+                </div>
+
+                <button type="submit">Enviar Mensaje</button>
+            </form>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2026 GPU BerdunStore - Todos los derechos reservados. Desarrollado para la Pre-Entrega.</p>
+    </footer>
+
+    <!-- Scripts requeridos al final -->
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="./js/app.js"></script>
+</body>
+</html>
